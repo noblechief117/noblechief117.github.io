@@ -5,18 +5,18 @@ tags:
 - tag2
 ---
 <center>
-<font size= "6">(Your Name) Datasheet</font><br>
+<font size= "6">Sam Kholmuminov Datasheet</font><br>
 as part of<br>
-<font size= "8"> Project Name</font><br>
+<font size= "8"> Project Aurora</font><br>
 for<br>
-<font size= "5"> Team ### </font><br>
+<font size= "5"> Team 102 </font><br>
 
-**Submission: month, DD, YYYY**
+**Submission: September, 2, 2026**
 </center>
 
 ## Introduction
 
-* This needs to be updated so that a reader gets an idea of the purpose of this datasheet.
+* This individual datasheet documents my design process, technical work, calculations, testing, and contributions to Project Aurora for EGR 304. It explains how my individual work supports Team 102's embedded-systems project.
 
 ### Project Summary
 

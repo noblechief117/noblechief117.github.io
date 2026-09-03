@@ -1,6 +1,6 @@
 site_name: EGR 304 Sam Kholmuminov Data Sheet
-site_url: https://embedded-systems-design.github.io/EGR304DataSheetTemplate
-repo_url: https://github.com/embedded-systems-design/EGR304DataSheetTemplate
+site_url: https://noblechief117.github.io
+repo_url: https://github.com/noblechief117/noblechief117.github.io
 edit_uri: edit/main/docs/
 theme:
   name: material

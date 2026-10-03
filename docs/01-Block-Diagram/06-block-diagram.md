@@ -14,4 +14,4 @@ I am responsible for the Storage Environment subsystem. This board monitors temp
 
 ## Block Diagram
 
-![Storage Environment Block Diagram](image/individual-block-diagram_SK.png)
+![Storage Environment Block Diagram](images/individual-block-diagram_SK.png)

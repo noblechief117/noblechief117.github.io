@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#power-budget" class="md-skip">
           Skip to content
         </a>
       
@@ -650,6 +650,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -678,6 +680,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -695,6 +699,51 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#section-a-parts-that-use-power-worst-case-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section A – Parts that use power (worst-case current)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-b-rails" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section B – Rails
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-c-regulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section C – Regulator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-d-external-power-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section D – External power source
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-e-battery-life" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section E – Battery life
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusions" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusions
@@ -704,9 +753,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resouces" class="md-nav__link">
+  <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
-      Resouces
+      Resources
     </span>
   </a>
   
@@ -801,6 +850,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -818,6 +869,51 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#section-a-parts-that-use-power-worst-case-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section A – Parts that use power (worst-case current)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-b-rails" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section B – Rails
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-c-regulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section C – Regulator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-d-external-power-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section D – External power source
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-e-battery-life" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section E – Battery life
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusions" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusions
@@ -827,9 +923,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resouces" class="md-nav__link">
+  <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
-      Resouces
+      Resources
     </span>
   </a>
   
@@ -858,20 +954,155 @@
   
 
 
-  <h1>Power Budget</h1>
-
+<h1 id="power-budget">Power Budget</h1>
+<p><strong>Name:</strong> Sam Kholmuminov<br>
+<strong>Team:</strong> Team 102 – Project Aurora<br>
+<strong>Subsystem:</strong> Storage Environment (Board D: Temperature &amp; Light)<br>
+<strong>Status:</strong> Draft for the initial Component Selection submission. The course says the power budget is optional for the first submission but required for the external design review, so the numbers below will be moved into the course Excel template (and the finished sheet pasted here as images) before the design review.</p>
 <h2 id="overview">Overview</h2>
-<p>Write a overview of what you did and why you did a Power Budget.</p>
-<blockquote>
-<p>Capture your power budge as a image to display. Take time to get clean breaks and a well organized layout.</p>
-</blockquote>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../budgetPg1.png" data-desc-position="bottom"><img alt="budget1" height:_300_="height:&quot;300;&quot;" src="../budgetPg1.png" style="style" width:_350_="width:&quot;350&quot;"></a></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../budgetPg2.png" data-desc-position="bottom"><img alt="budget2" height:_300_="height:&quot;300;&quot;" src="../budgetPg2.png" style="style" width:_350_="width:&quot;350&quot;"></a></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../budgetPg3.png" data-desc-position="bottom"><img alt="budget3" height:_300_="height:&quot;300;&quot;" src="../budgetPg3.png" style="style" width:_350_="width:&quot;350&quot;"></a></p>
+<p>The power budget checks one simple thing: can my power source and my regulator supply every part on the board at the same time, with a 25 % safety margin? My board has one power rail (5 V) fed by one linear regulator (L7805CV) from one external source (9 V wall adapter). The parts and the reasons for choosing them are on the <a href="../../02-Component-Selection/Component-Selection/">Component Selection</a> page.</p>
+<h2 id="section-a-parts-that-use-power-worst-case-current">Section A – Parts that use power (worst-case current)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Part</th>
+<th style="text-align: left;">Rail</th>
+<th style="text-align: left;">Max current</th>
+<th style="text-align: left;">Where the number comes from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">PIC18F57Q43 Curiosity Nano (PIC at 64 MHz, debugger off when no USB)</td>
+<td style="text-align: left;">5 V</td>
+<td style="text-align: left;">25 mA</td>
+<td style="text-align: left;">PIC18F57Q43 datasheet run current plus margin</td>
+</tr>
+<tr>
+<td style="text-align: left;">MCP6004-I/P quad op-amp</td>
+<td style="text-align: left;">5 V</td>
+<td style="text-align: left;">0.4 mA</td>
+<td style="text-align: left;">100 µA per amplifier × 4 (datasheet)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Red warning LED (RC5)</td>
+<td style="text-align: left;">5 V</td>
+<td style="text-align: left;">10 mA</td>
+<td style="text-align: left;">330 Ω series resistor on 5 V</td>
+</tr>
+<tr>
+<td style="text-align: left;">Debug LED</td>
+<td style="text-align: left;">5 V</td>
+<td style="text-align: left;">10 mA</td>
+<td style="text-align: left;">330 Ω series resistor on 5 V</td>
+</tr>
+<tr>
+<td style="text-align: left;">Heartbeat / spare LED</td>
+<td style="text-align: left;">5 V</td>
+<td style="text-align: left;">10 mA</td>
+<td style="text-align: left;">330 Ω series resistor on 5 V</td>
+</tr>
+<tr>
+<td style="text-align: left;">Photocell divider (NSL-19M51 + 3.3 kΩ)</td>
+<td style="text-align: left;">5 V</td>
+<td style="text-align: left;">1.5 mA</td>
+<td style="text-align: left;">5 V ÷ 3.3 kΩ worst case (photocell near 0 Ω in bright light)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Thermistor divider (10 kΩ NTC + 10 kΩ)</td>
+<td style="text-align: left;">5 V</td>
+<td style="text-align: left;">0.5 mA</td>
+<td style="text-align: left;">5 V ÷ 10 kΩ worst case</td>
+</tr>
+<tr>
+<td style="text-align: left;">Vref divider for the gain stage (10 kΩ + 10 kΩ)</td>
+<td style="text-align: left;">5 V</td>
+<td style="text-align: left;">0.25 mA</td>
+<td style="text-align: left;">5 V ÷ 20 kΩ</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pull-up resistor on the debug button (10 kΩ)</td>
+<td style="text-align: left;">5 V</td>
+<td style="text-align: left;">0.5 mA</td>
+<td style="text-align: left;">only while the button is pressed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total on the 5 V rail</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>about 58 mA</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-b-rails">Section B – Rails</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Rail</th>
+<th style="text-align: left;">Parts</th>
+<th style="text-align: left;">Current needed</th>
+<th style="text-align: left;">With 25 % safety margin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">5 V (logic + sensors)</td>
+<td style="text-align: left;">everything above</td>
+<td style="text-align: left;">58 mA</td>
+<td style="text-align: left;"><strong>73 mA</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The board has only one rail, which keeps the design simple and matches the course requirement for a single 5 V linear regulator.</p>
+<h2 id="section-c-regulator">Section C – Regulator</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Rail</th>
+<th style="text-align: left;">Regulator chosen</th>
+<th style="text-align: left;">Max output current</th>
+<th style="text-align: left;">Input needed</th>
+<th style="text-align: left;">Heat at 73 mA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">5 V</td>
+<td style="text-align: left;">L7805CV (STMicroelectronics, TO-220)</td>
+<td style="text-align: left;">1.5 A</td>
+<td style="text-align: left;">7 V to 35 V</td>
+<td style="text-align: left;">(9 V − 5 V) × 0.073 A = 0.29 W → no heat sink needed</td>
+</tr>
+</tbody>
+</table>
+<p>Why the L7805CV and not the alternatives is explained in Table 4 on the Component Selection page.</p>
+<h2 id="section-d-external-power-source">Section D – External power source</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Source</th>
+<th style="text-align: left;">Output</th>
+<th style="text-align: left;">Can supply</th>
+<th style="text-align: left;">Regulators connected</th>
+<th style="text-align: left;">Remaining current</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">SWI6-9-N-P5 9 V regulated wall adapter</td>
+<td style="text-align: left;">9 V DC</td>
+<td style="text-align: left;">670 mA</td>
+<td style="text-align: left;">L7805CV (draws 73 mA + 8 mA quiescent = 81 mA)</td>
+<td style="text-align: left;">670 − 81 = <strong>589 mA left (positive, OK)</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-e-battery-life">Section E – Battery life</h2>
+<p>Not applicable: the board runs from a wall adapter. For comparison, a 9 V alkaline battery (about 480 mAh) would last only 480 mAh ÷ 81 mA ≈ 6 hours, which is one reason a battery was rejected.</p>
 <h2 id="conclusions">Conclusions</h2>
-<p>From the prepare Power Budget, .....</p>
-<h2 id="resouces">Resouces</h2>
-<p>The power budget as a PDF download is available <a href="../PowerBudgetExample.pdf"><em>here</em></a>, and a Microsoft Excel Sheet <a href="../PowerBudgetExample.xlsx"><em>here</em></a>.</p>
+<p>One 5 V rail, about 58 mA worst case (73 mA with margin), a regulator rated for 1.5 A and an adapter rated for 670 mA: the supply has more than eight times the current the board needs, and the regulator stays cool without a heat sink.</p>
+<h2 id="resources">Resources</h2>
+<p>The course power budget template is available as a PDF <a href="../PowerBudgetExample.pdf">here</a> and as an Excel sheet <a href="../PowerBudgetExample.xlsx">here</a>. The completed template will replace the tables above before the design review.</p>
 
 
 

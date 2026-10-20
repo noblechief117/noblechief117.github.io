@@ -34,4 +34,5 @@ To review the details listed of the material used to construct the subsection, y
 For all the sections
 - [Block Diagram](01-Block-Diagram/06-block-diagram.md)
 - [Component Selection](02-Component-Selection/Component-Selection.md) — the parts I compared for every block of my Storage Environment board, which ones I picked and why, plus the shopping list
+- [Schematics](04-Schematic/schematic.md) — the full KiCad schematic of my Storage Environment board, explained section by section, with the PDF and the KiCad project (custom symbols included) to download
 - [Power Budget](05-Power-Budget/Power-Budget.md) — how much current the board needs and whether the regulator and wall adapter can supply it

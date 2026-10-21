@@ -183,46 +183,7 @@ All the library parts use the **US (ANSI) symbol style** where KiCad has one: re
 
 All of the parts are through-hole. The parts I still have to buy are the ones on the shopping list of my [Component Selection](../02-Component-Selection/Component-Selection.md) page; resistors, capacitors, LEDs, headers, the button, the barrel jack and the wall adapter I already have.
 
-## Assignment checklist
 
-*Table 5: Where each item of the course checklist is on the schematic*
-
-| Checklist item | Where |
-|:--|:--|
-| Linear voltage regulator, 9–12 V in, 5 V out, through-hole | U2 L7805CV (section 1) |
-| Fuse in series with the input, removable, with receptacle | F1 500 mA in Keystone 3517 clips (section 1) |
-| Power input connector | J2 barrel jack (section 1) |
-| One PIC18F57Q43 Curiosity Nano, custom symbol with initials | U1 `SK_Curiosity_Nano` (section 2) |
-| 0.1 µF bypass on every power pin | C4 on VTG, C8 on MCP6004 VDD, C2 on the regulator output |
-| Upstream UART → RX, TX → downstream UART | J1 pin 1 → RC3, RC2 → J1 pin 4 |
-| Amplified analog sensor with custom symbol, op-amp stage and filter | R2 photocell → U3A/U3B → R6/C5; RT1 thermistor → U3C → R8/C7 |
-| A way to show the microcontroller is working | D3 yellow heartbeat/debug LED, D1 power LED |
-| At least one ribbon cable connector, pin 8 = ground | J1 (section 3) |
-| Debugging LED with current-limiting resistor on a spare pin | D3 / R11 on RD5; D2 / R10 on RC5 |
-| Pushbutton with pull-up resistor, debounced | SW1, R12, C6 (section 4) |
-| Jumpers for isolating and debugging | JP1, JP2 |
-| Extra pads / test points | TP1–TP5 |
-| Extra headers for expansion | J3, J4 (section 8) |
-| Connectors for off-board parts | J1 (ribbon), J2 (adapter) |
-| Pull-up / pull-down on unused inputs of other ICs | none needed: all four MCP6004 amplifiers are used |
-| Power and ground symbols instead of net names | +5V, VIN and Earth symbols throughout; PWR_FLAG on VIN, Earth and VTG |
-| Part numbers or values, reference designators, fuse rating, LED colors, resistor wattage, capacitor voltage | value on every part; wattage and voltage ratings in the note at the bottom of the sheet (see Table 4) |
-| Short text label describing each section | eight numbered section titles |
-| Design reflects the current team direction | matches the block diagram (5 V rail, photocell + thermistor, MCP6004) and the Component Selection page |
-
-## Revision history
-
-* **Rev 1 (October 13, 2026):** first complete schematic, 52 parts. It also had a second spare header, headers for remote-mounted sensors, four more isolation jumpers, three extra test points, a second bulk capacitor and a series resistor on the button.
-* **Rev 2 (October 15, 2026):** went through every part against the assignment and the course checklist and removed the ones that were only "nice to have". 40 parts now; every part on the sheet is there because the assignment, the checklist, or the block diagram asks for it. References were renumbered so they run without gaps.
-* **Rev 3 (October 19–20, 2026):** all ground symbols changed to the **Earth** symbol, the same one as in my Sensor Design and Power Supply Design schematics, so the net is called Earth everywhere; all resistors and the electrolytic capacitor switched to the US-style symbols (`R_US`, `C_Polarized_US`); section boxes and titles changed from blue to neutral gray/black; part values now show only the value (1k, 0.1uF) and one note on the sheet lists the resistor wattage and capacitor voltage ratings, which keeps the drawing clean and still satisfies the checklist.
-
-## What is still open
-
-* Run **Inspect → Electrical Rules Checker** in KiCad 10 before the PCB assignment.
-* The Curiosity Nano symbol has no footprint yet. For the PCB assignment it needs a footprint with two rows of 28 pins at 0.1 in pitch (two 1×28 female headers), which I will draw in `EGR304_SK.pretty`.
-* Measure the real photocell inside the storage area and check that a lit box gives at least 2–3 V at TP4; if it saturates, lower R5.
-* Confirm with the team that ribbon pins 1 and 4 are the UART up/down pins for everyone, and that nobody else drives pins 2, 3, 5 or 6.
-* The block diagram page still shows the older 3.3 V / photodiode version; it will be updated to match this schematic.
 
 ## Sources I used
 

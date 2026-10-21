@@ -794,33 +794,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#assignment-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Assignment checklist
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#revision-history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Revision history
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-still-open" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is still open
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#sources-i-used" class="md-nav__link">
     <span class="md-ellipsis">
       Sources I used
@@ -1118,33 +1091,6 @@
   <a href="#parts-on-the-schematic" class="md-nav__link">
     <span class="md-ellipsis">
       Parts on the schematic
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#assignment-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Assignment checklist
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#revision-history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Revision history
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-still-open" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is still open
     </span>
   </a>
   
@@ -1641,112 +1587,6 @@
 </tbody>
 </table>
 <p>All of the parts are through-hole. The parts I still have to buy are the ones on the shopping list of my <a href="../../02-Component-Selection/Component-Selection/">Component Selection</a> page; resistors, capacitors, LEDs, headers, the button, the barrel jack and the wall adapter I already have.</p>
-<h2 id="assignment-checklist">Assignment checklist</h2>
-<p><em>Table 5: Where each item of the course checklist is on the schematic</em></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Checklist item</th>
-<th style="text-align: left;">Where</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Linear voltage regulator, 9–12 V in, 5 V out, through-hole</td>
-<td style="text-align: left;">U2 L7805CV (section 1)</td>
-</tr>
-<tr>
-<td style="text-align: left;">Fuse in series with the input, removable, with receptacle</td>
-<td style="text-align: left;">F1 500 mA in Keystone 3517 clips (section 1)</td>
-</tr>
-<tr>
-<td style="text-align: left;">Power input connector</td>
-<td style="text-align: left;">J2 barrel jack (section 1)</td>
-</tr>
-<tr>
-<td style="text-align: left;">One PIC18F57Q43 Curiosity Nano, custom symbol with initials</td>
-<td style="text-align: left;">U1 <code>SK_Curiosity_Nano</code> (section 2)</td>
-</tr>
-<tr>
-<td style="text-align: left;">0.1 µF bypass on every power pin</td>
-<td style="text-align: left;">C4 on VTG, C8 on MCP6004 VDD, C2 on the regulator output</td>
-</tr>
-<tr>
-<td style="text-align: left;">Upstream UART → RX, TX → downstream UART</td>
-<td style="text-align: left;">J1 pin 1 → RC3, RC2 → J1 pin 4</td>
-</tr>
-<tr>
-<td style="text-align: left;">Amplified analog sensor with custom symbol, op-amp stage and filter</td>
-<td style="text-align: left;">R2 photocell → U3A/U3B → R6/C5; RT1 thermistor → U3C → R8/C7</td>
-</tr>
-<tr>
-<td style="text-align: left;">A way to show the microcontroller is working</td>
-<td style="text-align: left;">D3 yellow heartbeat/debug LED, D1 power LED</td>
-</tr>
-<tr>
-<td style="text-align: left;">At least one ribbon cable connector, pin 8 = ground</td>
-<td style="text-align: left;">J1 (section 3)</td>
-</tr>
-<tr>
-<td style="text-align: left;">Debugging LED with current-limiting resistor on a spare pin</td>
-<td style="text-align: left;">D3 / R11 on RD5; D2 / R10 on RC5</td>
-</tr>
-<tr>
-<td style="text-align: left;">Pushbutton with pull-up resistor, debounced</td>
-<td style="text-align: left;">SW1, R12, C6 (section 4)</td>
-</tr>
-<tr>
-<td style="text-align: left;">Jumpers for isolating and debugging</td>
-<td style="text-align: left;">JP1, JP2</td>
-</tr>
-<tr>
-<td style="text-align: left;">Extra pads / test points</td>
-<td style="text-align: left;">TP1–TP5</td>
-</tr>
-<tr>
-<td style="text-align: left;">Extra headers for expansion</td>
-<td style="text-align: left;">J3, J4 (section 8)</td>
-</tr>
-<tr>
-<td style="text-align: left;">Connectors for off-board parts</td>
-<td style="text-align: left;">J1 (ribbon), J2 (adapter)</td>
-</tr>
-<tr>
-<td style="text-align: left;">Pull-up / pull-down on unused inputs of other ICs</td>
-<td style="text-align: left;">none needed: all four MCP6004 amplifiers are used</td>
-</tr>
-<tr>
-<td style="text-align: left;">Power and ground symbols instead of net names</td>
-<td style="text-align: left;">+5V, VIN and Earth symbols throughout; PWR_FLAG on VIN, Earth and VTG</td>
-</tr>
-<tr>
-<td style="text-align: left;">Part numbers or values, reference designators, fuse rating, LED colors, resistor wattage, capacitor voltage</td>
-<td style="text-align: left;">value on every part; wattage and voltage ratings in the note at the bottom of the sheet (see Table 4)</td>
-</tr>
-<tr>
-<td style="text-align: left;">Short text label describing each section</td>
-<td style="text-align: left;">eight numbered section titles</td>
-</tr>
-<tr>
-<td style="text-align: left;">Design reflects the current team direction</td>
-<td style="text-align: left;">matches the block diagram (5 V rail, photocell + thermistor, MCP6004) and the Component Selection page</td>
-</tr>
-</tbody>
-</table>
-<h2 id="revision-history">Revision history</h2>
-<ul>
-<li><strong>Rev 1 (October 13, 2026):</strong> first complete schematic, 52 parts. It also had a second spare header, headers for remote-mounted sensors, four more isolation jumpers, three extra test points, a second bulk capacitor and a series resistor on the button.</li>
-<li><strong>Rev 2 (October 15, 2026):</strong> went through every part against the assignment and the course checklist and removed the ones that were only "nice to have". 40 parts now; every part on the sheet is there because the assignment, the checklist, or the block diagram asks for it. References were renumbered so they run without gaps.</li>
-<li><strong>Rev 3 (October 19–20, 2026):</strong> all ground symbols changed to the <strong>Earth</strong> symbol, the same one as in my Sensor Design and Power Supply Design schematics, so the net is called Earth everywhere; all resistors and the electrolytic capacitor switched to the US-style symbols (<code>R_US</code>, <code>C_Polarized_US</code>); section boxes and titles changed from blue to neutral gray/black; part values now show only the value (1k, 0.1uF) and one note on the sheet lists the resistor wattage and capacitor voltage ratings, which keeps the drawing clean and still satisfies the checklist.</li>
-</ul>
-<h2 id="what-is-still-open">What is still open</h2>
-<ul>
-<li>Run <strong>Inspect → Electrical Rules Checker</strong> in KiCad 10 before the PCB assignment.</li>
-<li>The Curiosity Nano symbol has no footprint yet. For the PCB assignment it needs a footprint with two rows of 28 pins at 0.1 in pitch (two 1×28 female headers), which I will draw in <code>EGR304_SK.pretty</code>.</li>
-<li>Measure the real photocell inside the storage area and check that a lit box gives at least 2–3 V at TP4; if it saturates, lower R5.</li>
-<li>Confirm with the team that ribbon pins 1 and 4 are the UART up/down pins for everyone, and that nobody else drives pins 2, 3, 5 or 6.</li>
-<li>The block diagram page still shows the older 3.3 V / photodiode version; it will be updated to match this schematic.</li>
-</ul>
 <h2 id="sources-i-used">Sources I used</h2>
 <ul>
 <li><a href="https://embedded-systems-design.bitbucket.io/304/individual-assignments/schematic-design/">Individual – Subsystem Schematic Design assignment</a> and its checklist, <a href="https://embedded-systems-design.github.io/schematic-checklist/">Schematic Checklist</a>, <a href="https://embedded-systems-design.github.io/keeping-a-schematic-tidy/">Keeping a Schematic Tidy</a>, <a href="https://embedded-systems-design.github.io/packaging-kicad-files-for-submission/">Packaging KiCad files for submission</a> and <a href="https://embedded-systems-design.github.io/bypass-capacitor-basics/">Bypass capacitor basics</a></li>

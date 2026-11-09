@@ -8,12 +8,12 @@ title: Schematics
 **Team:** Team 102 – Project Aurora<br>
 **Subsystem:** Storage Environment (Board D: Temperature & Light)<br>
 **ECAD tool:** KiCad 10<br>
-**Schematic revision:** 3<br>
-**Last updated:** October 20, 2026
+**Schematic revision:** 4<br>
+**Last updated:** November 9, 2026
 
 ## What this page is
 
-This page has the full schematic of my **Storage Environment board**. The board sits inside the storage area of Project Aurora, measures the temperature and the light level, and tells my teammates over the team ribbon cable when something is out of range. The schematic is one A3 sheet drawn in KiCad, split into eight numbered boxes so it is easy to read.
+This page has the full schematic of my **Storage Environment board**. The board sits inside the storage area of Project Aurora, measures the temperature and the light level, and tells my teammates over the team ribbon cable when something is out of range. The schematic is one A3 sheet drawn in KiCad, split into eight numbered boxes so it is easy to read. Revision 4 is the version the [PCB](../06-PCB-Design/pcb-design.md) was laid out from.
 
 Everything on this page comes from my earlier assignments: the parts are the ones I picked in [Component Selection](../02-Component-Selection/Component-Selection.md), the regulator circuit comes from my Power Supply Design assignment, and the photocell amplifier comes from my Sensor Design assignment (with one fix that I explain below).
 
@@ -21,16 +21,15 @@ Everything on this page comes from my earlier assignments: the parts are the one
 
 | File | What it is |
 |:--|:--|
-| [Storage_Environment_Board_SK_schematic.pdf](files/Storage_Environment_Board_SK_schematic.pdf) | High-resolution PDF of the schematic, plotted from KiCad (vector, zoom in as far as you like) |
-| [Storage_Environment_Board_SK_KiCad.zip](files/Storage_Environment_Board_SK_KiCad.zip) | The whole KiCad project: `.kicad_pro`, `.kicad_sch`, my custom symbol library `EGR304_Sam.kicad_sym`, my custom footprint library `EGR304_SK.pretty`, and the library tables |
+| [Storage_Environment_Board_SK_schematic.pdf](files/Storage_Environment_Board_SK_schematic.pdf) | High-resolution PDF of the schematic (revision 4), plotted from KiCad (vector, zoom in as far as you like) |
 | [Storage_Environment_Board_SK_schematic.png](images/Storage_Environment_Board_SK_schematic.png) | The same schematic as a PNG image (shown below) |
 
-The zip was made from the project folder with the custom libraries saved as **project libraries** (`${KIPRJMOD}/EGR304_Sam.kicad_sym`), so the project opens on any computer without missing symbols.
+The KiCad project itself (schematic, PCB, my symbol and footprint libraries) is no longer linked here, because the copy on this page would go out of date every time the PCB changes. The current project zip is on the [PCB Design](../06-PCB-Design/pcb-design.md) page.
 
 ## The full schematic
 
 ![Full schematic of the Storage Environment board](images/Storage_Environment_Board_SK_schematic.png)
-**Figure 1:** The complete schematic (A3 sheet, revision 3). Click the image to open it full size, or use the PDF above.
+**Figure 1:** The complete schematic (A3 sheet, revision 4). Click the image to open it full size, or use the PDF above.
 
 ## How the board works in one paragraph
 
@@ -101,8 +100,8 @@ J1 is the Molex 0702460801 2×4 shrouded box header for the course-standard 8-wi
 
 ### 8. Spare header and power header
 
-* **J3** (1×10) brings out 10 spare I/O pins. On the PIC18F57Q43 every port pin can also be an ADC input, so they work as digital or analog spares.
-* **J4** (1×8) has +5 V, two Earth pins, four more spare pins (RA3, RA4, RB3, RA5) and the spare analog ribbon-cable line (pin 7), so a teammate's signal on that line can be reached with a probe or a jumper wire, and a breadboard can be powered from the board while debugging.
+* **J3** (1×10) brings out 10 spare I/O pins (RB2, RB1, RC4, RC6, RE2, RC7, RD0, RD3, RF2, RD6 on pins 1–10). On the PIC18F57Q43 every port pin can also be an ADC input, so they work as digital or analog spares. The pins are in the order of the Nano's left row, so the traces on the PCB do not cross.
+* **J4** (1×8) has +5 V (pin 1), two Earth pins (7, 8), four more spare pins (RA4, RA3, RB3, RA5 on pins 2–5) and the spare analog ribbon-cable line (pin 6, ribbon pin 7), so a teammate's signal on that line can be reached with a probe or a jumper wire, and a breadboard can be powered from the board while debugging.
 * Test points **TP1–TP5** cover VIN, +5V, Earth and both ADC inputs. Jumpers **JP1–JP2** isolate the Nano's power from the board.
 
 ## Custom symbols
@@ -120,7 +119,7 @@ All custom symbols live in the project library `EGR304_Sam.kicad_sym` (in the zi
 | `L7805_SK` | U2 | L7805CV 5 V regulator, TO-220 |
 | `VIN_SK` | power symbol | Power symbol for the 9–12 V rail after the fuse |
 
-The custom footprint library `EGR304_SK.pretty` (DIP-14, 5 mm photocell and 1×2 header footprints from my Sensor Design PCB) is also in the zip, ready for the PCB assignment.
+Every symbol also has its footprint from my custom footprint library `EGR304_SK.pretty` (all 17 footprints carry my initials; the list is on the [PCB Design](../06-PCB-Design/pcb-design.md) page).
 
 All the library parts use the **US (ANSI) symbol style** where KiCad has one: resistors are `Device:R_US` (zigzag), the electrolytic capacitor is `Device:C_Polarized_US`, and my photocell and thermistor symbols are drawn in the same zigzag style. Parts with only one style in the library (plain capacitor, LED, fuse, switch, jumpers, connectors, test points) use the normal KiCad symbol.
 
@@ -144,8 +143,8 @@ All the library parts use the **US (ANSI) symbol style** where KiCad has one: re
 | 51 | VTG | VTG | +5 V rail through JP1, bypassed by C4 |
 | 55 | VOFF | – | Earth through JP2 (turns the Nano's own regulator off) |
 | 15, 24, 33, 42, 52 | GND | Earth | Ground |
-| 9, 10, 11, 13, 18, 19, 20, 23, 27, 40 | RB2, RB1, RC4, RC6, RE2, RC7, RD0, RD3, RF2, RD6 | spare | J3 (spare GPIO) |
-| 16, 17, 47, 48 | RA3, RA4, RB3, RA5 | spare | J4 (power / analog spare) |
+| 9, 10, 11, 13, 18, 19, 20, 23, 27, 40 | RB2, RB1, RC4, RC6, RE2, RC7, RD0, RD3, RF2, RD6 | spare | J3 pins 1–10 (spare GPIO) |
+| 17, 16, 47, 48 | RA4, RA3, RB3, RA5 | spare | J4 pins 2–5 (power / analog spare) |
 | 1–6, 25, 26, 28–32, 34–38, 46, 49, 50, 53, 54, 56 | NC, ID, CDC, DBG, RF0, RF1, RF3, RC0, RC1, RE0, RE1, RF4–RF7, RB5, RB0, RA6, RA7, VBUS | not used | marked no-connect (debugger pins, Nano LED, USB 5 V, and port pins the board does not need) |
 
 ## Parts on the schematic
@@ -175,8 +174,8 @@ All the library parts use the **US (ANSI) symbol style** where KiCad has one: re
 | F1 | 500 mA fast 5 × 20 mm fuse + Keystone 3517 clips | removable fuse |
 | J1 | Molex 0702460801 2×4 box header | team ribbon cable |
 | J2 | PJ-102A barrel jack | 9–12 V in |
-| J3 | 1×10 header | spare GPIO |
-| J4 | 1×8 header | power / analog spare |
+| J3 | 1×10 header | spare GPIO, pins in Nano order |
+| J4 | 1×8 header | +5V, RA4, RA3, RB3, RA5, RIB_A7, Earth, Earth |
 | JP1, JP2 | 1×2 headers with shunts | Nano power jumpers |
 | SW1 | 6 mm tactile switch | debug button |
 | TP1–TP5 | test points | VIN, +5V, Earth, LIGHT_ADC, TEMP_ADC |
@@ -191,3 +190,7 @@ All of the parts are through-hole. The parts I still have to buy are the ones on
 * [PIC18F57Q43 Curiosity Nano Hardware User Guide (DS40002186A)](https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F57Q43-Curiosity-Nano-HW-UserG-DS40002186A.pdf): pinout, VTG/VOFF external power (section 3.3.2), CDC and debug pins
 * Datasheets: [L78xx](https://www.st.com/resource/en/datasheet/l78.pdf), [MCP6004](https://ww1.microchip.com/downloads/en/DeviceDoc/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf), [NSL-19M51](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6165/nsl-19m51.pdf), [B57164K NTC](https://www.tdk-electronics.tdk.com/inf/50/db/ntc/NTC_Leaded_disks_K164.pdf), [Molex 0702460801](https://www.digikey.com/en/products/detail/molex/0702460801/760165)
 * My [Component Selection](../02-Component-Selection/Component-Selection.md), [Power Budget](../05-Power-Budget/Power-Budget.md) and [Block Diagram](../01-Block-Diagram/06-block-diagram.md) pages, and my earlier Sensor Design and Power Supply Design KiCad projects
+
+## Revision 4 (November 9, 2026)
+
+The circuit is the same as revision 3. For the PCB Design assignment every symbol got its footprint from `EGR304_SK.pretty` (including the new Curiosity Nano socket footprint), the J3 pins were re-ordered to follow the Nano's left row and J4 pins 2 and 3 were swapped, so the header traces on the PCB run side by side without crossing. The date and revision in the title block were updated.

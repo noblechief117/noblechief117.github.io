@@ -35,5 +35,6 @@ For all the sections
 - [Block Diagram](01-Block-Diagram/06-block-diagram.md)
 - [Component Selection](02-Component-Selection/Component-Selection.md) — the parts I compared for every block of my Storage Environment board, which ones I picked and why, plus the shopping list
 - [Bill of Materials](03-BOM/BOM.md) — every part on the board (all 40 reference designators), where each one comes from, what it costs, and the Digi-Key order
-- [Schematics](04-Schematic/schematic.md) — the full KiCad schematic of my Storage Environment board, explained section by section, with the PDF and the KiCad project (custom symbols included) to download
+- [Schematics](04-Schematic/schematic.md) — the full KiCad schematic of my Storage Environment board (revision 4), explained section by section, with the PDF to download
+- [PCB Design](06-PCB-Design/pcb-design.md) — the printed circuit board layout made from the schematic: top and bottom copper images, the design rules for the Peralta mill, my footprint library, the Gerber files and the KiCad project to download
 - [Power Budget](05-Power-Budget/Power-Budget.md) — how much current the board needs and whether the regulator and wall adapter can supply it

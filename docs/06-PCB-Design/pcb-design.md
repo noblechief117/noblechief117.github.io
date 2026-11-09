@@ -116,26 +116,12 @@ The board setup in KiCad uses the values from the course page *PCB design rules 
 | Copper to board edge | 0.5 mm | so the contour router does not nick the copper |
 | Solder mask clearance | 5 mil (0.127 mm) | course page (no mask on the Peralta board, but set anyway) |
 
-*Table 4: Peralta mill specification check*
-
-| Requirement | This board |
-|:--|:--|
-| Maximum 100 mm × 100 mm | 96 mm × 90 mm |
-| 2 copper layers, no solder mask, no silkscreen | 2 layers; mask and silkscreen files are included but not used |
-| Traces ≥ 15 mil signal, ≥ 40 mil power | 20 mil signal, 40 mil power |
-| Spacing ≥ 6 mil | 10 mil everywhere |
-| Holes from the drill bit list, as few sizes as possible | 0.8, 1.0, 1.2, 2.0 mm (four sizes) |
-| Vias ≥ 0.5 mm hole | 0.8 mm hole, 1.6 mm pad, only three vias |
-| No traces carrying more than 500 mA | the fuse limits the whole board to 500 mA; the rail traces are 40 mil |
-| Ground or power plane on both sides | Earth plane on top and bottom |
-| Initials in large bold text on the top copper | "SK" 5.5 mm tall, bold, on the top copper (and on the bottom copper) |
-| Board outline in the Gerber set | Edge.Cuts layer |
 
 **Design Rules Check:** Inspect → Design Rules Checker in KiCad reports **0 errors and 0 unconnected items**. The only messages are silkscreen warnings (part outlines from the KiCad library touching their own pads), which do not matter because the silkscreen is not printed on the Peralta board. The screenshot of the DRC window with the board is submitted to Canvas as a separate PDF.
 
 **DFM check (jlcdfm.com):** the Gerber zip was also uploaded to the free JLCPCB online DFM tool, with the order settings from the assignment page (FR-4, 2 layers, 1.6 mm, 1 oz copper). Every copper (routing) check passes with 0 errors: trace width, trace spacing, pad spacing, annular ring, hole spacing, trace and pad to board edge. The tool lists two kinds of warnings, and both come from the copper lettering, not from traces: *sharp trace corner* (the pointed corners inside the letters SK, TOP, BOTTOM, TEAM 102 and AURORA) and *unconnected trace end* (the free ends of the letter strokes – every real trace ends on a pad, a via or another trace). The silkscreen and solder-mask rows report JLCPCB's own factory limits (silkscreen lines at least 0.153 mm wide, no silkscreen on pads), which do not apply to this board because the Peralta mill makes neither layer. The exported report is in the downloads table.
 
-*Table 5: Course PCB checklist*
+*Table 4: Course PCB checklist*
 
 | Checklist item | Where |
 |:--|:--|
@@ -150,16 +136,7 @@ The board setup in KiCad uses the values from the course page *PCB design rules 
 | Test points on 0.1 in spacing | TP1–TP5 plus the spare header pins J3/J4 |
 | Programming connector close to the microcontroller | not needed: the Nano is programmed over its own USB connector |
 
-## What changed in the schematic (revision 4)
 
-The PCB assignment also asked for an updated schematic. The circuit is the same as revision 3; the changes are for the layout:
-
-* every symbol now has its footprint from `EGR304_SK.pretty` (Table 2);
-* the pins of the spare GPIO header **J3** were re-ordered to follow the order of the Nano's left row (RB2, RB1, RC4, RC6, RE2, RC7, RD0, RD3, RF2, RD6), so the ten traces run side by side without crossing;
-* on **J4**, pins 2 and 3 were swapped (RA4 on pin 2, RA3 on pin 3) for the same reason;
-* the title block was updated (rev 4, November 9, 2026).
-
-The updated schematic PDF and image are on the [Schematics](../04-Schematic/schematic.md) page.
 
 ## Manufacturing files
 
@@ -180,11 +157,6 @@ The Gerber set in `SamKholmuminov102.zip` was exported with File → Plot (Gerbe
 
 The order request on the Peralta site (fultonapps.asu.edu/polylab) is for **one board**, Prof. Zane Reynolds' 10:30 AM EGR 304 section, **no solder mask**, **no rub-out area** (there is no RF antenna on the board), **0.5 oz copper**.
 
-## What is still open
-
-* Print page 1 of the PDF at 100 % and set the real parts on it: the Curiosity Nano with its two header strips, the barrel jack, the fuse clips, the box header and the TO-220 regulator. The jack is the part to check most carefully, because the PJ-102A and PJ-102AH have different pins and my footprint uses 2.0 mm round holes for both.
-* Check the Nano orientation on the printout: with the USB connector at the top edge of the board, the "ID / CDC RX" pins are on the left row and "VBUS / VOFF" on the right row, the same as on the Nano's own silkscreen.
-* After the board is milled: solder the female headers and the socket first, then the rest, then check the 5 V rail at TP2 before plugging the Nano in (the Subsystem Verification assignment).
 
 ## Sources I used
 

@@ -17,21 +17,13 @@ This page has the full schematic of my **Storage Environment board**. The board 
 
 Everything on this page comes from my earlier assignments: the parts are the ones I picked in [Component Selection](../02-Component-Selection/Component-Selection.md), the regulator circuit comes from my Power Supply Design assignment, and the photocell amplifier comes from my Sensor Design assignment (with one fix that I explain below).
 
-## Downloads
-
-| File | What it is |
-|:--|:--|
-| [Storage_Environment_Board_SK_schematic.pdf](files/Storage_Environment_Board_SK_schematic.pdf) | High-resolution PDF of the schematic (revision 4), plotted from KiCad (vector, zoom in as far as you like) |
-| [Storage_Environment_Board_SK_schematic.png](images/Storage_Environment_Board_SK_schematic.png) | The same schematic as a PNG image (shown below) |
-
-The KiCad project itself (schematic, PCB, my symbol and footprint libraries) is no longer linked here, because the copy on this page would go out of date every time the PCB changes. The current project zip is on the [PCB Design](../06-PCB-Design/pcb-design.md) page.
 
 ## The full schematic
 
 ![Full schematic of the Storage Environment board](images/Storage_Environment_Board_SK_schematic.png)
 **Figure 1:** The complete schematic (A3 sheet, revision 4). Click the image to open it full size, or use the PDF above.
 
-## How the board works in one paragraph
+## How the board works 
 
 A 9 V wall adapter plugs into the barrel jack J2. The current goes through a removable 500 mA fuse and into the L7805 linear regulator, which makes the 5 V rail for everything on the board. The 5 V rail powers the PIC18F57Q43 Curiosity Nano through its VTG pin, the MCP6004 quad op-amp, and the two sensor dividers. The photocell divider goes through a buffer, a gain-of-4.3 stage and a low-pass filter into ADC pin RA1. The thermistor divider goes through a buffer and a low-pass filter into ADC pin RA0. The PIC compares the readings with limits in software and drives three ribbon-cable lines (TEMP_ALERT, LIGHT_ALERT, HEARTBEAT_D), one analog line (TEMP_LEVEL, from the PIC's DAC through a buffer), and the team UART. A red LED shows a warning, a yellow LED is for debugging, and a green LED shows that the 5 V rail is up. All grounds use the **Earth** symbol, the same one I used in my Sensor Design and Power Supply Design schematics.
 
@@ -84,7 +76,7 @@ J1 is the Molex 0702460801 2×4 shrouded box header for the course-standard 8-wi
 * **U3A** is a unity-gain buffer. It isolates the high-impedance divider from the gain stage.
 * **U3B** is a **non-inverting gain stage**: gain = 1 + R5/R4 = 1 + 33 k/10 k = **4.3**. This stretches the 0–1.16 V "dark to lit" range over the full 0–5 V range of the ADC, so dark reads near 0 and a lit box reads near 5 V. Very bright light simply sits at 5 V, which is fine for a "is the box open" sensor. If the box turns out to be brighter than I expect, R5 can be lowered (10 kΩ gives a gain of 2).
 * **R6/C5** make the low-pass filter the course asks for: fc = 1/(2π × 10 kΩ × 0.1 µF) ≈ **160 Hz**. It removes 60 Hz flicker from room lights and amplifier noise before the ADC, and the capacitor also supplies the charge the ADC sample capacitor needs. **TP4** sits right on the ADC line so the signal can be checked with a meter.
-* **What changed since my Sensor Design assignment:** that version used an inverting stage around a 2.5 V reference (R4 = 10 k, R5 = 43 k, Vref from two 10 k resistors). Working the numbers again, its output is 13.25 V − 4.3 × V_in, which only stays inside 0–5 V when the divider is between 1.9 V and 3.1 V, i.e. only in very bright light; for normal room light it is stuck at 5 V. The non-inverting stage fixes that and needs two fewer resistors.
+
 
 ### 6. Temperature sensor: thermistor, buffer and low-pass filter
 
@@ -191,6 +183,3 @@ All of the parts are through-hole. The parts I still have to buy are the ones on
 * Datasheets: [L78xx](https://www.st.com/resource/en/datasheet/l78.pdf), [MCP6004](https://ww1.microchip.com/downloads/en/DeviceDoc/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf), [NSL-19M51](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6165/nsl-19m51.pdf), [B57164K NTC](https://www.tdk-electronics.tdk.com/inf/50/db/ntc/NTC_Leaded_disks_K164.pdf), [Molex 0702460801](https://www.digikey.com/en/products/detail/molex/0702460801/760165)
 * My [Component Selection](../02-Component-Selection/Component-Selection.md), [Power Budget](../05-Power-Budget/Power-Budget.md) and [Block Diagram](../01-Block-Diagram/06-block-diagram.md) pages, and my earlier Sensor Design and Power Supply Design KiCad projects
 
-## Revision 4 (November 9, 2026)
-
-The circuit is the same as revision 3. For the PCB Design assignment every symbol got its footprint from `EGR304_SK.pretty` (including the new Curiosity Nano socket footprint), the J3 pins were re-ordered to follow the Nano's left row and J4 pins 2 and 3 were swapped, so the header traces on the PCB run side by side without crossing. The date and revision in the title block were updated.

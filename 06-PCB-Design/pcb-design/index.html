@@ -1,0 +1,1660 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+
+<meta name="robots" content="nofollow">
+
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://noblechief117.github.io/06-PCB-Design/pcb-design/">
+      
+      
+        <link rel="prev" href="../../05-Power-Budget/Power-Budget/">
+      
+      
+        <link rel="next" href="../../Appendix/">
+      
+      
+      <link rel="icon" href="../../static/logo304.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+            
+
+    
+
+    
+      
+        <title>PCB Design - EGR 304 Sam Kholmuminov Data Sheet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pcb-design" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EGR 304 Sam Kholmuminov Data Sheet" class="md-header__button md-logo" aria-label="EGR 304 Sam Kholmuminov Data Sheet" data-md-component="logo">
+      
+  <img src="../../static/logo304.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EGR 304 Sam Kholmuminov Data Sheet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PCB Design
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/noblechief117/noblechief117.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01-Block-Diagram/06-block-diagram/" class="md-tabs__link">
+          
+  
+    
+  
+  01 Block Diagram
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../02-Component-Selection/Component-Selection/" class="md-tabs__link">
+          
+  
+    
+  
+  02 Component Selection
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03-BOM/BOM/" class="md-tabs__link">
+          
+  
+    
+  
+  03 BOM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../04-Schematic/schematic/" class="md-tabs__link">
+          
+  
+    
+  
+  04 Schematic
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../05-Power-Budget/Power-Budget/" class="md-tabs__link">
+          
+  
+    
+  
+  05 Power Budget
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  06 PCB Design
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Appendix/" class="md-tabs__link">
+          
+  
+    
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EGR 304 Sam Kholmuminov Data Sheet" class="md-nav__button md-logo" aria-label="EGR 304 Sam Kholmuminov Data Sheet" data-md-component="logo">
+      
+  <img src="../../static/logo304.svg" alt="logo">
+
+    </a>
+    EGR 304 Sam Kholmuminov Data Sheet
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/noblechief117/noblechief117.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../01-Block-Diagram/06-block-diagram/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    01 Block Diagram
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../02-Component-Selection/Component-Selection/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    02 Component Selection
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../03-BOM/BOM/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    03 BOM
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../04-Schematic/schematic/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    04 Schematic
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../05-Power-Budget/Power-Budget/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    05 Power Budget
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    06 PCB Design
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            06 PCB Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    PCB Design
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    PCB Design
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#what-this-page-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      What this page is
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      The layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-board-in-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      The board in numbers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-parts-are-placed" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the parts are placed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-traces-are-routed" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the traces are routed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#footprints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Footprints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-rules-and-manufacturing-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design rules and manufacturing checks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changed-in-the-schematic-revision-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      What changed in the schematic (revision 4)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manufacturing-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manufacturing files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-still-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is still open
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources-i-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources I used
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Appendix/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendix
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#what-this-page-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      What this page is
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      The layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-board-in-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      The board in numbers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-parts-are-placed" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the parts are placed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-traces-are-routed" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the traces are routed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#footprints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Footprints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-rules-and-manufacturing-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design rules and manufacturing checks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changed-in-the-schematic-revision-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      What changed in the schematic (revision 4)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manufacturing-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manufacturing files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-still-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is still open
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources-i-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources I used
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/noblechief117/noblechief117.github.io/edit/main/docs/06-PCB-Design/pcb-design.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="pcb-design">PCB Design</h1>
+<p><strong>Name:</strong> Sam Kholmuminov<br>
+<strong>Team:</strong> Team 102 – Project Aurora<br>
+<strong>Subsystem:</strong> Storage Environment (Board D: Temperature &amp; Light)<br>
+<strong>ECAD tool:</strong> KiCad 10<br>
+<strong>PCB revision:</strong> 1 (from schematic revision 4)<br>
+<strong>Last updated:</strong> November 9, 2026</p>
+<h2 id="what-this-page-is">What this page is</h2>
+<p>This page has the printed circuit board layout of my <strong>Storage Environment board</strong>. It is the second step of the subsystem design: the <a href="../../04-Schematic/schematic/">Schematics</a> page says <em>what</em> is connected, this page shows <em>where</em> every part sits on the board and how the copper traces connect them. The board is made in-house on the Peralta 109 PCB mill, so the layout follows the Peralta mill rules (two copper layers, no solder mask, no silkscreen, 15 mil signal traces, 40 mil power traces, standard drill sizes).</p>
+<h2 id="downloads">Downloads</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">File</th>
+<th style="text-align: left;">What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="../files/Storage_Environment_Board_SK_pcb.pdf">Storage_Environment_Board_SK_pcb.pdf</a></td>
+<td style="text-align: left;">PDF of the layout, page 1 = top copper, page 2 = bottom copper (seen from the bottom, so the text reads normally). Plotted 1:1, so it can be printed at 100 % to check the footprints against the real parts</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="files/Storage_Environment_Board_SK_KiCad.zip">Storage_Environment_Board_SK_KiCad.zip</a></td>
+<td style="text-align: left;">The whole KiCad project: schematic (rev 4), PCB, my symbol library <code>EGR304_Sam.kicad_sym</code>, my footprint library <code>EGR304_SK.pretty</code>, the library tables and the Gerber folder</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="../files/SamKholmuminov102.zip">SamKholmuminov102.zip</a></td>
+<td style="text-align: left;">The manufacturing files only (Gerber layers + Excellon drill files), exactly what was sent to Peralta 109</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="../files/Storage_Environment_Board_SK_DFM_report.pdf">Storage_Environment_Board_SK_DFM_report.pdf</a></td>
+<td style="text-align: left;">The DFM (design for manufacturing) analysis report of the Gerber set from the free JLCPCB online tool, jlcdfm.com</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="../images/Storage_Environment_Board_SK_pcb_top.png">Storage_Environment_Board_SK_pcb_top.png</a></td>
+<td style="text-align: left;">Top copper layer as an image (Figure 1)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="../images/Storage_Environment_Board_SK_pcb_bottom.png">Storage_Environment_Board_SK_pcb_bottom.png</a></td>
+<td style="text-align: left;">Bottom copper layer as an image, mirrored so it looks the way the real board looks when you turn it over (Figure 2)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-layout">The layout</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Storage_Environment_Board_SK_pcb_top.png" data-desc-position="bottom"><img alt="Top copper layer of the Storage Environment board" src="../images/Storage_Environment_Board_SK_pcb_top.png"></a>
+<strong>Figure 1:</strong> Top copper layer (red = copper, white = no copper). The large "SK" and the words TOP / TEAM 102 / AURORA are cut into the copper on the right, as the assignment asks. The yellow outlines are the part bodies (silkscreen), which the mill does not print but which are still in the files.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Storage_Environment_Board_SK_pcb_bottom.png" data-desc-position="bottom"><img alt="Bottom copper layer of the Storage Environment board, mirrored" src="../images/Storage_Environment_Board_SK_pcb_bottom.png"></a>
+<strong>Figure 2:</strong> Bottom copper layer, shown from the bottom side. The text (BOTTOM / TEAM 102 / AURORA / SK) reads normally from this side.</p>
+<h2 id="the-board-in-numbers">The board in numbers</h2>
+<p><em>Table 1: Facts about the board</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Board size</td>
+<td style="text-align: left;"><strong>96 mm × 90 mm</strong> (3.78 in × 3.54 in), inside the 100 mm × 100 mm limit</td>
+</tr>
+<tr>
+<td style="text-align: left;">Copper layers</td>
+<td style="text-align: left;">2 (top and bottom), 0.5 oz/ft² copper, no solder mask, no silkscreen</td>
+</tr>
+<tr>
+<td style="text-align: left;">Parts</td>
+<td style="text-align: left;">40 (all through-hole), 167 pads</td>
+</tr>
+<tr>
+<td style="text-align: left;">Signal traces</td>
+<td style="text-align: left;">20 mil (0.5 mm) wide, 10 mil (0.254 mm) clearance</td>
+</tr>
+<tr>
+<td style="text-align: left;">Power traces (+5V, VIN, VTG, ground returns)</td>
+<td style="text-align: left;">40 mil (1.016 mm) wide</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ground</td>
+<td style="text-align: left;"><strong>Earth plane on both sides</strong>, thermal reliefs on every ground pad</td>
+</tr>
+<tr>
+<td style="text-align: left;">Vias</td>
+<td style="text-align: left;">3 (RD6 to J3, HEARTBEAT_D to J1, TEMP_LEVEL to J1), 1.6 mm pad / 0.8 mm hole</td>
+</tr>
+<tr>
+<td style="text-align: left;">Drill sizes</td>
+<td style="text-align: left;">only four: 0.8 mm, 1.0 mm, 1.2 mm, 2.0 mm (all on the Peralta bit list)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Smallest hole-to-hole distance</td>
+<td style="text-align: left;">1.2 mm (electrolytic C3), above the 0.8 mm limit</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total trace length</td>
+<td style="text-align: left;">about 1.2 m on top, 0.6 m on bottom</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-the-parts-are-placed">How the parts are placed</h2>
+<p>I placed the parts section by section, the same way the schematic is drawn, and kept the ground plane rule from class in mind: with a ground plane on both sides, no ground trace has to be drawn at all; every ground pad just connects to the plane through thermal spokes.</p>
+<ul>
+<li><strong>Curiosity Nano (U1)</strong> runs top to bottom on the left of the board, USB connector at the top edge so the cable can be plugged in without touching anything else. It plugs into two 1×28 female headers (my <code>Curiosity_Nano_2x28_P2.54mm_SK</code> footprint), so the Nano can be pulled off and used elsewhere. Nothing is mounted under it; only traces run there.</li>
+<li><strong>All connectors on the left edge:</strong> J1 (team ribbon cable, top), J3 (spare GPIO) and J4 (power / analog spare) below it. The ten J3 traces come straight across from the Nano's left row without crossing each other. J4 is turned so its +5 V pin is at the bottom, next to the 40 mil +5 V trace that comes along the bottom edge.</li>
+<li><strong>Power input in the top right corner:</strong> barrel jack J2 at the top edge (the plug points up, away from the board), then the fuse clips F1, then the L7805 regulator U2 with C1, C3 on its input and C2 on its output, in that order, so the 9 V current takes the shortest path. The regulator tab faces the top edge so a clip-on heat sink would still fit (it is not needed, the dissipation is 0.3 W). TP1 (VIN), TP2 (+5V) and TP3 (Earth) sit next to the regulator.</li>
+<li><strong>Nano power jumpers JP1, JP2 and C4</strong> are directly beside the Nano's VTG, VOFF and GND pins (top of the right row) so the bypass capacitor is as close to VTG as possible.</li>
+<li><strong>Op-amp U3</strong> sits in the middle of the right half. Its bypass capacitor C8 is right at pin 4 (VDD). The light channel parts (R4, R5, R6, C5, TP4) are on the left of U3, between U3 and the Nano, because that signal goes to the Nano. The temperature channel parts (R8, C7, TP5) are below and left of U3 for the same reason. The DAC buffer resistor R9 is above U3, where the TEMP_LEVEL trace leaves for the ribbon cable.</li>
+<li><strong>Sensors on the right edge:</strong> the photocell R2 with its divider resistor R3, and the thermistor RT1 with R7, are on the outer edge so they see the light and the air in the storage area and are not shaded by the Nano or the regulator.</li>
+<li><strong>Debug parts:</strong> the red warning LED D2 and its resistor R10 are next to the Nano pin that drives them (top left); the yellow debug LED D3 and R11 are at the bottom; the pushbutton SW1, its pull-up R12 and debounce capacitor C6 are in the bottom right corner, where a finger can reach the button.</li>
+<li><strong>Text in copper:</strong> the big <strong>SK</strong> and the words TOP, TEAM 102, AURORA on the top layer, and BOTTOM, TEAM 102, AURORA, SK (mirrored) on the bottom layer, so each side of the bare board can be told apart.</li>
+</ul>
+<h2 id="how-the-traces-are-routed">How the traces are routed</h2>
+<ul>
+<li>Routed by hand, no autorouter. Every corner is a 45° bend, no right angles.</li>
+<li><strong>Top layer</strong> carries most signal traces and the +5 V bus down the right side; <strong>bottom layer</strong> carries the long vertical runs and the few traces that have to cross something. Because every part is through-hole, a trace can change layer at a pad, so only three vias were needed.</li>
+<li><strong>+5 V</strong> is a 40 mil trace from the regulator output: one branch to the Nano jumper JP1 and the op-amp (bottom layer), one branch down the right edge past the photocell, thermistor, pull-up and switch, along the bottom edge to J4.</li>
+<li><strong>VIN</strong> (9 V from the fuse) is a 40 mil trace about 15 mm long: fuse → C3 → C1 → regulator input → TP1.</li>
+<li><strong>Ground</strong> needs no traces: the Earth plane on both sides reaches every ground pad. Two short 40 mil ground stubs were added anyway (regulator GND pin to C3, Nano GND pin 52 to JP2) where the plane spokes were thin.</li>
+<li>The analog nets (LIGHT_ADC, TEMP_ADC, the sensor divider nodes) are short and stay away from the switching LED lines and the UART.</li>
+<li>The two long ribbon-cable nets that come from the right half of the board (TEMP_LEVEL from the DAC buffer, RIB_A7 from J4) run along the top edge and the left edge of the board, outside everything else.</li>
+</ul>
+<h2 id="footprints">Footprints</h2>
+<p>Every part has a footprint from my own library <strong><code>EGR304_SK.pretty</code></strong> (initials SK in the library name and in every footprint name). The footprints are based on the standard KiCad ones, with two changes for the mill: every hole uses one of the Peralta drill bits, and every annular ring is at least 0.4 mm (16 mil) so it is not cut away.</p>
+<p><em>Table 2: Custom footprint library EGR304_SK.pretty</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Footprint</th>
+<th style="text-align: left;">Used by</th>
+<th style="text-align: left;">Pads / holes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Curiosity_Nano_2x28_P2.54mm_SK</code></td>
+<td style="text-align: left;">U1</td>
+<td style="text-align: left;">2 × 28 pins, 2.54 mm pitch, 15.24 mm (0.6 in) between the rows, 2.0 mm pads, 1.0 mm holes; pin 1 square, pins 1–28 down the left row and 29–56 up the right row with the USB end at the top, like the pinout drawing in the hardware user guide</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>DIP-14_W7.62mm_SK</code></td>
+<td style="text-align: left;">U3 (in a socket)</td>
+<td style="text-align: left;">1.6 mm pads, 0.8 mm holes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>TO-220-3_Vertical_SK</code></td>
+<td style="text-align: left;">U2</td>
+<td style="text-align: left;">2.0 × 2.2 mm pads, 1.2 mm holes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>R_Axial_DIN0207_P10.16mm_SK</code></td>
+<td style="text-align: left;">R1, R3–R12</td>
+<td style="text-align: left;">10.16 mm pitch, 1.6 mm pads, 0.8 mm holes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>R_LDR_5mm_SK</code></td>
+<td style="text-align: left;">R2</td>
+<td style="text-align: left;">NSL-19M51 photocell, 3.4 mm pitch, 1.6 mm pads, 0.8 mm holes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>NTC_Disc_P5.00mm_SK</code></td>
+<td style="text-align: left;">RT1</td>
+<td style="text-align: left;">B57164K thermistor, 5.0 mm lead spacing, 1.6 mm pads, 0.8 mm holes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>C_Disc_D5.0mm_P5.00mm_SK</code></td>
+<td style="text-align: left;">C1, C2, C4–C8</td>
+<td style="text-align: left;">5.0 mm pitch, 1.6 mm pads, 0.8 mm holes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CP_Radial_D5.0mm_P2.00mm_SK</code></td>
+<td style="text-align: left;">C3</td>
+<td style="text-align: left;">2.0 mm pitch electrolytic, square pad = +, 1.6 mm pads, 0.8 mm holes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LED_D5.0mm_SK</code></td>
+<td style="text-align: left;">D1, D2, D3</td>
+<td style="text-align: left;">5 mm LED, 2.54 mm pitch, 1.8 mm pads, 0.8 mm holes, square pad = cathode (flat side)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Fuseholder_5x20mm_Keystone_3517_SK</code></td>
+<td style="text-align: left;">F1</td>
+<td style="text-align: left;">two clips 23.11 mm apart, 3.0 mm pads, 2.0 mm holes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>BarrelJack_PJ-102A_SK</code></td>
+<td style="text-align: left;">J2</td>
+<td style="text-align: left;">pins at 0 / 6.0 / (4.7, 3.0) mm, 3.2 mm pads, 2.0 mm round holes (round holes instead of slots, which the mill cannot cut well)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>IDC_Header_2x04_P2.54mm_SK</code></td>
+<td style="text-align: left;">J1</td>
+<td style="text-align: left;">Molex 0702460801 2×4 box header, 2.0 mm pads, 1.0 mm holes, notch on the odd-pin side</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>PinHeader_1x10_P2.54mm_SK</code>, <code>PinHeader_1x08_P2.54mm_SK</code>, <code>PinHeader_1x02_P2.54mm_SK</code></td>
+<td style="text-align: left;">J3, J4, JP1, JP2</td>
+<td style="text-align: left;">2.0 mm pads, 1.0 mm holes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SW_PUSH_6mm_SK</code></td>
+<td style="text-align: left;">SW1</td>
+<td style="text-align: left;">6 × 6 mm tactile switch, 2.0 mm pads, 1.2 mm holes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>TestPoint_THT_1.6mm_SK</code></td>
+<td style="text-align: left;">TP1–TP5</td>
+<td style="text-align: left;">1.6 mm pad, 0.8 mm hole, fits a header pin or a wire loop</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rules-and-manufacturing-checks">Design rules and manufacturing checks</h2>
+<p>The board setup in KiCad uses the values from the course page <em>PCB design rules setup in KiCad</em> and the Peralta mill specifications.</p>
+<p><em>Table 3: Design rules used (File → Board Setup → Constraints)</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Rule</th>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Where it comes from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Minimum clearance</td>
+<td style="text-align: left;">10 mil (0.254 mm)</td>
+<td style="text-align: left;">course recommendation (mill minimum is 6 mil)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Minimum track width</td>
+<td style="text-align: left;">15 mil (0.381 mm)</td>
+<td style="text-align: left;">Peralta signal trace minimum; my signal traces are 20 mil</td>
+</tr>
+<tr>
+<td style="text-align: left;">Power/ground track width</td>
+<td style="text-align: left;">40 mil (1.016 mm)</td>
+<td style="text-align: left;">Peralta / course checklist</td>
+</tr>
+<tr>
+<td style="text-align: left;">Minimum annular ring</td>
+<td style="text-align: left;">15 mil (0.381 mm)</td>
+<td style="text-align: left;">course page; my smallest ring is 16 mil</td>
+</tr>
+<tr>
+<td style="text-align: left;">Minimum via diameter / hole</td>
+<td style="text-align: left;">19.7 mil / 0.5 mm</td>
+<td style="text-align: left;">Peralta; my vias are 63 mil / 0.8 mm</td>
+</tr>
+<tr>
+<td style="text-align: left;">Copper to hole clearance</td>
+<td style="text-align: left;">10 mil (0.254 mm)</td>
+<td style="text-align: left;">course page</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hole to hole clearance</td>
+<td style="text-align: left;">31.5 mil (0.8 mm)</td>
+<td style="text-align: left;">course page</td>
+</tr>
+<tr>
+<td style="text-align: left;">Copper to board edge</td>
+<td style="text-align: left;">0.5 mm</td>
+<td style="text-align: left;">so the contour router does not nick the copper</td>
+</tr>
+<tr>
+<td style="text-align: left;">Solder mask clearance</td>
+<td style="text-align: left;">5 mil (0.127 mm)</td>
+<td style="text-align: left;">course page (no mask on the Peralta board, but set anyway)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 4: Peralta mill specification check</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Requirement</th>
+<th style="text-align: left;">This board</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Maximum 100 mm × 100 mm</td>
+<td style="text-align: left;">96 mm × 90 mm</td>
+</tr>
+<tr>
+<td style="text-align: left;">2 copper layers, no solder mask, no silkscreen</td>
+<td style="text-align: left;">2 layers; mask and silkscreen files are included but not used</td>
+</tr>
+<tr>
+<td style="text-align: left;">Traces ≥ 15 mil signal, ≥ 40 mil power</td>
+<td style="text-align: left;">20 mil signal, 40 mil power</td>
+</tr>
+<tr>
+<td style="text-align: left;">Spacing ≥ 6 mil</td>
+<td style="text-align: left;">10 mil everywhere</td>
+</tr>
+<tr>
+<td style="text-align: left;">Holes from the drill bit list, as few sizes as possible</td>
+<td style="text-align: left;">0.8, 1.0, 1.2, 2.0 mm (four sizes)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Vias ≥ 0.5 mm hole</td>
+<td style="text-align: left;">0.8 mm hole, 1.6 mm pad, only three vias</td>
+</tr>
+<tr>
+<td style="text-align: left;">No traces carrying more than 500 mA</td>
+<td style="text-align: left;">the fuse limits the whole board to 500 mA; the rail traces are 40 mil</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ground or power plane on both sides</td>
+<td style="text-align: left;">Earth plane on top and bottom</td>
+</tr>
+<tr>
+<td style="text-align: left;">Initials in large bold text on the top copper</td>
+<td style="text-align: left;">"SK" 5.5 mm tall, bold, on the top copper (and on the bottom copper)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Board outline in the Gerber set</td>
+<td style="text-align: left;">Edge.Cuts layer</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Design Rules Check:</strong> Inspect → Design Rules Checker in KiCad reports <strong>0 errors and 0 unconnected items</strong>. The only messages are silkscreen warnings (part outlines from the KiCad library touching their own pads), which do not matter because the silkscreen is not printed on the Peralta board. The screenshot of the DRC window with the board is submitted to Canvas as a separate PDF.</p>
+<p><strong>DFM check (jlcdfm.com):</strong> the Gerber zip was also uploaded to the free JLCPCB online DFM tool, with the order settings from the assignment page (FR-4, 2 layers, 1.6 mm, 1 oz copper). Every copper (routing) check passes with 0 errors: trace width, trace spacing, pad spacing, annular ring, hole spacing, trace and pad to board edge. The tool lists two kinds of warnings, and both come from the copper lettering, not from traces: <em>sharp trace corner</em> (the pointed corners inside the letters SK, TOP, BOTTOM, TEAM 102 and AURORA) and <em>unconnected trace end</em> (the free ends of the letter strokes – every real trace ends on a pad, a via or another trace). The silkscreen and solder-mask rows report JLCPCB's own factory limits (silkscreen lines at least 0.153 mm wide, no silkscreen on pads), which do not apply to this board because the Peralta mill makes neither layer. The exported report is in the downloads table.</p>
+<p><em>Table 5: Course PCB checklist</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Checklist item</th>
+<th style="text-align: left;">Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">All components have footprints</td>
+<td style="text-align: left;">40 of 40, all from <code>EGR304_SK.pretty</code> (Table 2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bypass capacitors close to the regulator and the IC power pins</td>
+<td style="text-align: left;">C1/C3 at the regulator input, C2 at its output, C4 at the Nano VTG pin, C8 at the MCP6004 pin 4</td>
+</tr>
+<tr>
+<td style="text-align: left;">Power and ground traces ≥ 40 mil, sized with a trace width calculator</td>
+<td style="text-align: left;">40 mil; at 75 mA (0.5 A fuse worst case) a 0.5 oz 40 mil trace stays below 10 °C rise</td>
+</tr>
+<tr>
+<td style="text-align: left;">Board space for mechanical constraints</td>
+<td style="text-align: left;">the Nano, the jack, the ribbon header and the button are all at the edges; the plug and the cable leave the board at the top and left</td>
+</tr>
+<tr>
+<td style="text-align: left;">Top and bottom copper labeled with "top", "bottom" and the group name</td>
+<td style="text-align: left;">TOP / BOTTOM, TEAM 102 AURORA, SK in copper on both sides</td>
+</tr>
+<tr>
+<td style="text-align: left;">Few vias, no vias under components</td>
+<td style="text-align: left;">3 vias, none under a part</td>
+</tr>
+<tr>
+<td style="text-align: left;">Through-hole connectors, traces for them on the other side where useful</td>
+<td style="text-align: left;">all parts are through-hole; the Nano and header traces run on both layers around the pads</td>
+</tr>
+<tr>
+<td style="text-align: left;">No autorouter, 45° bends, no right angles</td>
+<td style="text-align: left;">hand routed, all corners 45°</td>
+</tr>
+<tr>
+<td style="text-align: left;">Test points on 0.1 in spacing</td>
+<td style="text-align: left;">TP1–TP5 plus the spare header pins J3/J4</td>
+</tr>
+<tr>
+<td style="text-align: left;">Programming connector close to the microcontroller</td>
+<td style="text-align: left;">not needed: the Nano is programmed over its own USB connector</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-changed-in-the-schematic-revision-4">What changed in the schematic (revision 4)</h2>
+<p>The PCB assignment also asked for an updated schematic. The circuit is the same as revision 3; the changes are for the layout:</p>
+<ul>
+<li>every symbol now has its footprint from <code>EGR304_SK.pretty</code> (Table 2);</li>
+<li>the pins of the spare GPIO header <strong>J3</strong> were re-ordered to follow the order of the Nano's left row (RB2, RB1, RC4, RC6, RE2, RC7, RD0, RD3, RF2, RD6), so the ten traces run side by side without crossing;</li>
+<li>on <strong>J4</strong>, pins 2 and 3 were swapped (RA4 on pin 2, RA3 on pin 3) for the same reason;</li>
+<li>the title block was updated (rev 4, November 9, 2026).</li>
+</ul>
+<p>The updated schematic PDF and image are on the <a href="../../04-Schematic/schematic/">Schematics</a> page.</p>
+<h2 id="manufacturing-files">Manufacturing files</h2>
+<p>The Gerber set in <code>SamKholmuminov102.zip</code> was exported with File → Plot (Gerber, KiCad file extensions, X2 attributes, job file) and File → Plot → Generate Drill Files (Excellon, inches, decimal format, separate PTH and NPTH files):</p>
+<p><em>Table 6: Files in SamKholmuminov102.zip</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">File</th>
+<th style="text-align: left;">Layer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Storage_Environment_Board_SK-F_Cu.gbr</td>
+<td style="text-align: left;">top copper</td>
+</tr>
+<tr>
+<td style="text-align: left;">Storage_Environment_Board_SK-B_Cu.gbr</td>
+<td style="text-align: left;">bottom copper</td>
+</tr>
+<tr>
+<td style="text-align: left;">Storage_Environment_Board_SK-F_Mask.gbr, -B_Mask.gbr</td>
+<td style="text-align: left;">top and bottom solder mask (not used on the Peralta board)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Storage_Environment_Board_SK-F_Silkscreen.gbr, -B_Silkscreen.gbr</td>
+<td style="text-align: left;">top and bottom silkscreen (submitted, not used)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Storage_Environment_Board_SK-Edge_Cuts.gbr</td>
+<td style="text-align: left;">board outline</td>
+</tr>
+<tr>
+<td style="text-align: left;">Storage_Environment_Board_SK-PTH.drl</td>
+<td style="text-align: left;">plated holes (167 pads + 3 vias)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Storage_Environment_Board_SK-NPTH.drl</td>
+<td style="text-align: left;">non-plated holes (none on this board)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Storage_Environment_Board_SK-job.gbrjob</td>
+<td style="text-align: left;">Gerber job file (layer list)</td>
+</tr>
+</tbody>
+</table>
+<p>The order request on the Peralta site (fultonapps.asu.edu/polylab) is for <strong>one board</strong>, Prof. Zane Reynolds' 10:30 AM EGR 304 section, <strong>no solder mask</strong>, <strong>no rub-out area</strong> (there is no RF antenna on the board), <strong>0.5 oz copper</strong>.</p>
+<h2 id="what-is-still-open">What is still open</h2>
+<ul>
+<li>Print page 1 of the PDF at 100 % and set the real parts on it: the Curiosity Nano with its two header strips, the barrel jack, the fuse clips, the box header and the TO-220 regulator. The jack is the part to check most carefully, because the PJ-102A and PJ-102AH have different pins and my footprint uses 2.0 mm round holes for both.</li>
+<li>Check the Nano orientation on the printout: with the USB connector at the top edge of the board, the "ID / CDC RX" pins are on the left row and "VBUS / VOFF" on the right row, the same as on the Nano's own silkscreen.</li>
+<li>After the board is milled: solder the female headers and the socket first, then the rest, then check the 5 V rail at TP2 before plugging the Nano in (the Subsystem Verification assignment).</li>
+</ul>
+<h2 id="sources-i-used">Sources I used</h2>
+<ul>
+<li><a href="https://embedded-systems-design.bitbucket.io/304/individual-assignments/pcb-design/">Individual – Subsystem PCB Design assignment</a> and the <a href="https://embedded-systems-design.github.io/pcb-design-checklist/">PCB design checklist</a></li>
+<li><a href="https://labs.engineering.asu.edu/peraltastudios/pcb-mill-specs">Peralta Studios PCB mill specifications</a> (trace widths, spacing, drill bit list, via sizes)</li>
+<li>Course KiCad pages: <a href="https://embedded-systems-design.github.io/pcb-design-rules-setup-in-kicad/">PCB design rules setup in KiCad</a>, <a href="https://embedded-systems-design.github.io/kicad-pcb-design-tutorial/">KiCad PCB design tutorial</a>, <a href="https://embedded-systems-design.github.io/adding-text-to-pcb-in-kicad/">Adding text to a PCB in KiCad</a>, <a href="https://embedded-systems-design.github.io/exporting-gerber-from-kicad/">Exporting Gerber files from KiCad</a>, <a href="https://embedded-systems-design.github.io/packaging-kicad-files-for-submission/">Packaging KiCad files for submission</a></li>
+<li><a href="https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/UserGuides/PIC18F57Q43-Curiosity-Nano-HW-UserGuide-DS40002186B.pdf">PIC18F57Q43 Curiosity Nano Hardware User Guide</a> (pinout figure 4-1) and the <a href="https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/BoardDesignFiles/PIC18F57Q43-Curiosity-Nano-Schematics.pdf">Curiosity Nano schematics and assembly drawing</a> (board 83.82 mm × 20.32 mm, 2.54 mm pitch, 15.24 mm between the pin rows)</li>
+<li>Part drawings on my <a href="../../03-BOM/BOM/">BOM</a> page: Keystone 3517 clips, Molex 0702460801 header, NSL-19M51 photocell, B57164K thermistor, L7805CV, MCP6004</li>
+<li><a href="https://www.4pcb.com/trace-width-calculator.html">Trace width calculator (Advanced Circuits)</a></li>
+<li>My <a href="../../04-Schematic/schematic/">Schematics</a> page (revision 4) and my Sensor Design PCB from earlier in the semester (same design rules, same zone settings)</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../../05-Power-Budget/Power-Budget/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Power Budget">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Power Budget
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../Appendix/" class="md-footer__link md-footer__link--next" aria-label="Next: Appendix - Main Page">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Appendix - Main Page
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025 team-name-here
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/2025_fall" target="_blank" rel="noopener" title="2023 Site" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16h160v80c0 17.7 14.3 32 32 32h80v288c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3l-90.6-90.5C262.7 6.7 246.5 0 229.5 0H64zm97 289c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L79 303c-9.4 9.4-9.4 24.6 0 33.9l48 48c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-31-31 31-31zm96-34c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l31 31-31 31c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l48-48c9.4-9.4 9.4-24.6 0-33.9l-48-48z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "toc.follow", "navigation.top", "navigation.path", "navigation.indexes", "navigation.prune", "content.action.edit", "navigation.footer"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

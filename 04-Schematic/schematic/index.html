@@ -321,6 +321,26 @@
     
     
       <li class="md-tabs__item">
+        <a href="../../06-PCB-Design/pcb-design/" class="md-tabs__link">
+          
+  
+    
+  
+  06 PCB Design
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../../Appendix/" class="md-tabs__link">
           
   
@@ -802,6 +822,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#revision-4-november-9-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      Revision 4 (November 9, 2026)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -850,6 +879,52 @@
   
   <span class="md-ellipsis">
     05 Power Budget
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../06-PCB-Design/pcb-design/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    06 PCB Design
   </span>
   
 
@@ -1105,6 +1180,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#revision-4-november-9-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      Revision 4 (November 9, 2026)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1133,10 +1217,10 @@
 <strong>Team:</strong> Team 102 – Project Aurora<br>
 <strong>Subsystem:</strong> Storage Environment (Board D: Temperature &amp; Light)<br>
 <strong>ECAD tool:</strong> KiCad 10<br>
-<strong>Schematic revision:</strong> 3<br>
-<strong>Last updated:</strong> October 20, 2026</p>
+<strong>Schematic revision:</strong> 4<br>
+<strong>Last updated:</strong> November 9, 2026</p>
 <h2 id="what-this-page-is">What this page is</h2>
-<p>This page has the full schematic of my <strong>Storage Environment board</strong>. The board sits inside the storage area of Project Aurora, measures the temperature and the light level, and tells my teammates over the team ribbon cable when something is out of range. The schematic is one A3 sheet drawn in KiCad, split into eight numbered boxes so it is easy to read.</p>
+<p>This page has the full schematic of my <strong>Storage Environment board</strong>. The board sits inside the storage area of Project Aurora, measures the temperature and the light level, and tells my teammates over the team ribbon cable when something is out of range. The schematic is one A3 sheet drawn in KiCad, split into eight numbered boxes so it is easy to read. Revision 4 is the version the <a href="../../06-PCB-Design/pcb-design/">PCB</a> was laid out from.</p>
 <p>Everything on this page comes from my earlier assignments: the parts are the ones I picked in <a href="../../02-Component-Selection/Component-Selection/">Component Selection</a>, the regulator circuit comes from my Power Supply Design assignment, and the photocell amplifier comes from my Sensor Design assignment (with one fix that I explain below).</p>
 <h2 id="downloads">Downloads</h2>
 <table>
@@ -1149,11 +1233,7 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><a href="../files/Storage_Environment_Board_SK_schematic.pdf">Storage_Environment_Board_SK_schematic.pdf</a></td>
-<td style="text-align: left;">High-resolution PDF of the schematic, plotted from KiCad (vector, zoom in as far as you like)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="../files/Storage_Environment_Board_SK_KiCad.zip">Storage_Environment_Board_SK_KiCad.zip</a></td>
-<td style="text-align: left;">The whole KiCad project: <code>.kicad_pro</code>, <code>.kicad_sch</code>, my custom symbol library <code>EGR304_Sam.kicad_sym</code>, my custom footprint library <code>EGR304_SK.pretty</code>, and the library tables</td>
+<td style="text-align: left;">High-resolution PDF of the schematic (revision 4), plotted from KiCad (vector, zoom in as far as you like)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="../images/Storage_Environment_Board_SK_schematic.png">Storage_Environment_Board_SK_schematic.png</a></td>
@@ -1161,10 +1241,10 @@
 </tr>
 </tbody>
 </table>
-<p>The zip was made from the project folder with the custom libraries saved as <strong>project libraries</strong> (<code>${KIPRJMOD}/EGR304_Sam.kicad_sym</code>), so the project opens on any computer without missing symbols.</p>
+<p>The KiCad project itself (schematic, PCB, my symbol and footprint libraries) is no longer linked here, because the copy on this page would go out of date every time the PCB changes. The current project zip is on the <a href="../../06-PCB-Design/pcb-design/">PCB Design</a> page.</p>
 <h2 id="the-full-schematic">The full schematic</h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Storage_Environment_Board_SK_schematic.png" data-desc-position="bottom"><img alt="Full schematic of the Storage Environment board" src="../images/Storage_Environment_Board_SK_schematic.png"></a>
-<strong>Figure 1:</strong> The complete schematic (A3 sheet, revision 3). Click the image to open it full size, or use the PDF above.</p>
+<strong>Figure 1:</strong> The complete schematic (A3 sheet, revision 4). Click the image to open it full size, or use the PDF above.</p>
 <h2 id="how-the-board-works-in-one-paragraph">How the board works in one paragraph</h2>
 <p>A 9 V wall adapter plugs into the barrel jack J2. The current goes through a removable 500 mA fuse and into the L7805 linear regulator, which makes the 5 V rail for everything on the board. The 5 V rail powers the PIC18F57Q43 Curiosity Nano through its VTG pin, the MCP6004 quad op-amp, and the two sensor dividers. The photocell divider goes through a buffer, a gain-of-4.3 stage and a low-pass filter into ADC pin RA1. The thermistor divider goes through a buffer and a low-pass filter into ADC pin RA0. The PIC compares the readings with limits in software and drives three ribbon-cable lines (TEMP_ALERT, LIGHT_ALERT, HEARTBEAT_D), one analog line (TEMP_LEVEL, from the PIC's DAC through a buffer), and the team UART. A red LED shows a warning, a yellow LED is for debugging, and a green LED shows that the 5 V rail is up. All grounds use the <strong>Earth</strong> symbol, the same one I used in my Sensor Design and Power Supply Design schematics.</p>
 <h2 id="section-by-section">Section by section</h2>
@@ -1277,8 +1357,8 @@
 </ul>
 <h3 id="8-spare-header-and-power-header">8. Spare header and power header</h3>
 <ul>
-<li><strong>J3</strong> (1×10) brings out 10 spare I/O pins. On the PIC18F57Q43 every port pin can also be an ADC input, so they work as digital or analog spares.</li>
-<li><strong>J4</strong> (1×8) has +5 V, two Earth pins, four more spare pins (RA3, RA4, RB3, RA5) and the spare analog ribbon-cable line (pin 7), so a teammate's signal on that line can be reached with a probe or a jumper wire, and a breadboard can be powered from the board while debugging.</li>
+<li><strong>J3</strong> (1×10) brings out 10 spare I/O pins (RB2, RB1, RC4, RC6, RE2, RC7, RD0, RD3, RF2, RD6 on pins 1–10). On the PIC18F57Q43 every port pin can also be an ADC input, so they work as digital or analog spares. The pins are in the order of the Nano's left row, so the traces on the PCB do not cross.</li>
+<li><strong>J4</strong> (1×8) has +5 V (pin 1), two Earth pins (7, 8), four more spare pins (RA4, RA3, RB3, RA5 on pins 2–5) and the spare analog ribbon-cable line (pin 6, ribbon pin 7), so a teammate's signal on that line can be reached with a probe or a jumper wire, and a breadboard can be powered from the board while debugging.</li>
 <li>Test points <strong>TP1–TP5</strong> cover VIN, +5V, Earth and both ADC inputs. Jumpers <strong>JP1–JP2</strong> isolate the Nano's power from the board.</li>
 </ul>
 <h2 id="custom-symbols">Custom symbols</h2>
@@ -1325,7 +1405,7 @@
 </tr>
 </tbody>
 </table>
-<p>The custom footprint library <code>EGR304_SK.pretty</code> (DIP-14, 5 mm photocell and 1×2 header footprints from my Sensor Design PCB) is also in the zip, ready for the PCB assignment.</p>
+<p>Every symbol also has its footprint from my custom footprint library <code>EGR304_SK.pretty</code> (all 17 footprints carry my initials; the list is on the <a href="../../06-PCB-Design/pcb-design/">PCB Design</a> page).</p>
 <p>All the library parts use the <strong>US (ANSI) symbol style</strong> where KiCad has one: resistors are <code>Device:R_US</code> (zigzag), the electrolytic capacitor is <code>Device:C_Polarized_US</code>, and my photocell and thermistor symbols are drawn in the same zigzag style. Parts with only one style in the library (plain capacitor, LED, fuse, switch, jumpers, connectors, test points) use the normal KiCad symbol.</p>
 <h2 id="pin-table">Pin table</h2>
 <p><em>Table 3: Curiosity Nano pins used by this board</em></p>
@@ -1427,13 +1507,13 @@
 <td style="text-align: left;">9, 10, 11, 13, 18, 19, 20, 23, 27, 40</td>
 <td style="text-align: left;">RB2, RB1, RC4, RC6, RE2, RC7, RD0, RD3, RF2, RD6</td>
 <td style="text-align: left;">spare</td>
-<td style="text-align: left;">J3 (spare GPIO)</td>
+<td style="text-align: left;">J3 pins 1–10 (spare GPIO)</td>
 </tr>
 <tr>
-<td style="text-align: left;">16, 17, 47, 48</td>
-<td style="text-align: left;">RA3, RA4, RB3, RA5</td>
+<td style="text-align: left;">17, 16, 47, 48</td>
+<td style="text-align: left;">RA4, RA3, RB3, RA5</td>
 <td style="text-align: left;">spare</td>
-<td style="text-align: left;">J4 (power / analog spare)</td>
+<td style="text-align: left;">J4 pins 2–5 (power / analog spare)</td>
 </tr>
 <tr>
 <td style="text-align: left;">1–6, 25, 26, 28–32, 34–38, 46, 49, 50, 53, 54, 56</td>
@@ -1562,12 +1642,12 @@
 <tr>
 <td style="text-align: left;">J3</td>
 <td style="text-align: left;">1×10 header</td>
-<td style="text-align: left;">spare GPIO</td>
+<td style="text-align: left;">spare GPIO, pins in Nano order</td>
 </tr>
 <tr>
 <td style="text-align: left;">J4</td>
 <td style="text-align: left;">1×8 header</td>
-<td style="text-align: left;">power / analog spare</td>
+<td style="text-align: left;">+5V, RA4, RA3, RB3, RA5, RIB_A7, Earth, Earth</td>
 </tr>
 <tr>
 <td style="text-align: left;">JP1, JP2</td>
@@ -1594,6 +1674,8 @@
 <li>Datasheets: <a href="https://www.st.com/resource/en/datasheet/l78.pdf">L78xx</a>, <a href="https://ww1.microchip.com/downloads/en/DeviceDoc/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf">MCP6004</a>, <a href="https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6165/nsl-19m51.pdf">NSL-19M51</a>, <a href="https://www.tdk-electronics.tdk.com/inf/50/db/ntc/NTC_Leaded_disks_K164.pdf">B57164K NTC</a>, <a href="https://www.digikey.com/en/products/detail/molex/0702460801/760165">Molex 0702460801</a></li>
 <li>My <a href="../../02-Component-Selection/Component-Selection/">Component Selection</a>, <a href="../../05-Power-Budget/Power-Budget/">Power Budget</a> and <a href="../../01-Block-Diagram/06-block-diagram/">Block Diagram</a> pages, and my earlier Sensor Design and Power Supply Design KiCad projects</li>
 </ul>
+<h2 id="revision-4-november-9-2026">Revision 4 (November 9, 2026)</h2>
+<p>The circuit is the same as revision 3. For the PCB Design assignment every symbol got its footprint from <code>EGR304_SK.pretty</code> (including the new Curiosity Nano socket footprint), the J3 pins were re-ordered to follow the Nano's left row and J4 pins 2 and 3 were swapped, so the header traces on the PCB run side by side without crossing. The date and revision in the title block were updated.</p>
 
 
 

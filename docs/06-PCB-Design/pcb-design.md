@@ -142,7 +142,7 @@ The board setup in KiCad uses the values from the course page *PCB design rules 
 
 The Gerber set in `SamKholmuminov102.zip` was exported with File → Plot (Gerber, KiCad file extensions, X2 attributes, job file) and File → Plot → Generate Drill Files (Excellon, inches, decimal format, separate PTH and NPTH files):
 
-*Table 6: Files in SamKholmuminov102.zip*
+*Table 5: Files in SamKholmuminov102.zip*
 
 | File | Layer |
 |:--|:--|

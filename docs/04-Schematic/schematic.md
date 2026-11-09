@@ -17,6 +17,14 @@ This page has the full schematic of my **Storage Environment board**. The board 
 
 Everything on this page comes from my earlier assignments: the parts are the ones I picked in [Component Selection](../02-Component-Selection/Component-Selection.md), the regulator circuit comes from my Power Supply Design assignment, and the photocell amplifier comes from my Sensor Design assignment (with one fix that I explain below).
 
+## Downloads
+
+| File | What it is |
+|:--|:--|
+| [Storage_Environment_Board_SK_schematic.pdf](files/Storage_Environment_Board_SK_schematic.pdf) | High-resolution PDF of the schematic (revision 4), plotted from KiCad |
+| [Storage_Environment_Board_SK_schematic.png](images/Storage_Environment_Board_SK_schematic.png) | The same schematic as a PNG image (shown below) |
+
+The KiCad project zip (schematic, PCB and my libraries) is on the [PCB Design](../06-PCB-Design/pcb-design.md) page.
 
 ## The full schematic
 
